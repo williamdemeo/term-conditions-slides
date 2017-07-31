@@ -28,7 +28,7 @@ output:
 
 ## The Problem
 
-- Can we efficiently decide whether a given finite algebra $\mathbf{A}$ generates
+- Can we efficiently decide whether a finite algebra $\mathbf{A}$ generates
   a variety with a difference term?
 
 - We give a positive answer in the idempotent case and describe 
@@ -38,13 +38,16 @@ output:
 
 ## Definitions
 
-- A  <a style="color:#e7ad52">*difference term*</a> for $\mathcal V$ is a term $d$ satisfying,
-  for all $\mathbf A = \langle A, \dots \rangle \in \mathcal V$ and all $a, b \in A$, <br> <br>
+<div class="fragment" align="left">A  <a style="color:#e7ad52">*difference term*</a> for $\mathcal V$ is a term $d$ satisfying,
+  <p>
+  for all $\mathbf A = \langle A, \dots \rangle \in \mathcal V$ and all $a, b \in A$, 
+  </p>
   $$d(a,a,b) = b \quad \text{ and } \quad
-  d(a,b,b) \mathrel{[\theta, \theta]} a.$$
+  d(a,b,b) \mathrel{[\theta, \theta]} a$$
+  </div>
   <br>
-- Here $\theta$ is an arbitrary congruence containing $(a,b)$
-  and $[\cdot, \cdot]$ is the <a style="color:#e7ad52">*commutator*</a>.
+  <div class="fragment" align="left">where $\theta$ is any congruence containing $(a,b)$ and $[\cdot, \cdot]$ is the <a style="color:#e7ad52">*commutator*</a>.</div>
+
 
 <aside class="notes"> When the relations above hold we call $d^{\mathbf{A}}$
 a **difference term operation** for $\mathbf{A}$.
@@ -53,16 +56,15 @@ a **difference term operation** for $\mathbf{A}$.
 ---
 
 
-## Problem Statement
-
-
-+ Is there a poly-time algorithm that takes in a finite
+<div align="left">**Problem Statement**
+  <br>
+  Is there a poly-time algorithm that takes a finite
   idempotent algebra $\mathbf{A}$ and decides 
-  whether $\mathbb{V}(\mathbf{A})$ has a diff term?
-
-+ Kearnes (*J Alg 1995*) <br>
- <a style="color:#e7ad52">$\mathbb{V}(\mathbf{A})$ has a diff term</a> $\Leftrightarrow$
-<a style="color:#e7ad52">$\mathbb{V}(\mathbf{A})$ has Taylor term and no typ-2 tails</a>
+  whether $\mathbb{V}(\mathbf{A})$ has a difference term?
+  </div>
++ **Theorem** (Kearnes *J Algebra* 1995) <br>
+<a style="color:#e7ad52">$\mathbb{V}(\mathbf{A})$ has a diff term</a> $\Leftrightarrow$
+<a style="color:#e7ad52">$\mathbb{V}(\mathbf{A})$ has a Taylor term and no type-2 tails</a>
 
 ---
 
@@ -74,79 +76,79 @@ $\Leftrightarrow$ <a style="color:#e7ad52"> $\mathbb{V}(\mathbf{A})$ omits 1's a
 
 + Omitting 1's is poly-time decidable by Valeriote's subtype theorem.
 
-+ <a style="color:#e7ad52">**Problem**</a> <br>
-  Is there a poly-time algorithm that takes in a finite 
++ **Reduced Problem** <br>
+  Is there a poly-time algorithm that takes a finite 
   idempotent algebra $\mathbf{A}$ and decides whether 
-  $\mathbb{V}(\mathbf{A})$ has non-empty type-2 tails?
+  $\mathbb{V}(\mathbf{A})$ has type-2 tails?
 
 ---
 
 ## A Related Problem
 
-+ **Theorem** (Freese, Valeriote *IJAC 2009*)<br>
-  There is a poly-time algorithm that takes in a finite
++ **Theorem** (Freese, Valeriote *IJAC* 2009)<br>
+  There is a poly-time algorithm that takes a finite
   idempotent algebra $\mathbf{A}$ and decides whether $\mathbb{V}(\mathbf{A})$ is 
   <a style="color:#e7ad52">*congruence-modular*</a>.
 
-+ *Congruence-modularity* is characterized by omitting 1's, 5's, and tails.
++ **Proof Idea**
+  <small>
+  <ul> 
+    <li>Congruence-modularity is characterized by omitting 1's, 5's, and tails.</li>
+    <li> Omitting 1's and 5's is poly-time decidable by Valeriote's subtype theorem.</li>
+    <li> If there is a tail in $\mathbb{V}(\mathbf{A})$, then there is a tail <a style="color:#e7ad52">near the bottom</a>.</li>
+  </ul>
+  </small>
 
-+ Strategy:
-  - No 1's and no 5's can be decided by Valeriote's subtype theorem.
-  - Freese and Valeriote proved that if there is a tail in 
-    $\mathbb{V}(\mathbf{A})$, then there is a tail "near the bottom."
+---
+
+## What is "near the bottom"?
+
+- **Theorem.** Let $\mathbf{A}$ be a finite idempotent algebra and $T$ an order ideal in the
+  lattice of types. Then $\mathbb{V}(\mathbf{A})$ omits $T$ iff $\mathsf{S}(\mathbf{A})$
+  does.
+  <p>
+  For example, $\mathbb{V}(\mathbf{A})$ omits $\{1, 5\}$ iff $\mathsf{S}(\mathbf{A})$ 
+  does.
+  </p>
+
+- Freese and Valeriote prove moreover: 
+  <p>
+  If $\mathbb{V}(\mathbf{A})$ omits $\{1, 5\}$, 
+  then nontrivial tails occur in $\mathbb{V}(\mathbf{A})$ only if they occur
+  in 3-generated subalgebras of $\mathbf{A}^2$.</p>
 
 
 ---
 
-The following result will be useful.
+<div align="left">
+- Let $[n] = \{0,1,\dots, n-1\}$.
 
-**Theorem.** Let $\mathbf{A}$ be a finite idempotent algebra and $T$ an order ideal in the
-lattice of types. Then $\mathbb{V}(\mathbf{A})$ omits $T$ if and only if $\mathsf{S}(\mathbf{A})$ does.
-
-<aside class="notes"> In particular, $\mathbb{V}(\mathbf{A})$ omits 1 and 2 if and only if $\mathsf{S}(\mathbf{A})$ omits 1 and 2.</aside>
-
-
----
-
-
-- Freese and Valeriote prove a sequence of lemmas to establish that, 
-  if $\mathbf{A}$ is finite and idempotent, and if
-  $\mathcal V = \mathbb{V}(\mathbf{A})$ omits types 1 and 5, 
-  then to test for the existence of tails
-  in $\mathcal V$ it suffices to look for them 
-  in the 3-generated subalgebras of $\mathbf{A}^2$.
-
----
-
-- Throughout, we let $[n]$ denote the set $\{0,1,\dots, n-1\}$ and 
-  we let $\mathcal S$ be a finite set of finite, similar, idempotent algebras, 
-  closed under the taking of subalgebras, such that 
-  $\mathcal V = \mathbb{V}(\mathcal S)$ omits type-1 (but may include type-\mathcal typ).
+- Let $\mathcal S$ be a finite set of finite, similar, idempotent algebras, 
+  closed under taking subalgebras, such that $\mathcal V = \mathbb{V}(\mathcal S)$ omits 1.
 
 - If there is a finite algebra in $\mathcal V$ having a type-2 minimal 
-  set with a tail, then, by standard tame congruence theory, there
-  is such an algebra which is a subalgebra of a product 
-  of elements in $\mathcal S$. 
+  set with a tail, then, by standard tct, such an algebra occurs as a subalgebra 
+  of a product of members of $\mathcal S$. 
 
 ---
 
-- Suppose that some finite algebra $\mathbf{B}$ in $\mathcal V$ has a prime 
+- Suppose a finite algebra $\mathbf{B}$ in $\mathcal V$ has a prime 
   quotient of type~2 whose minimal sets have non-empty tails.
 
-- We show that there is a 3-generated subalgebra of the
+- We show $\exists$ a 3-generated subalgebra of the
   product of two members of $\mathcal S$ with this property.
 
-- Since $\mathcal S$ is closed under the taking of subalgebras,
-  we may assume that the algebra $\mathbf{B}$ from the previous paragraph is a subdirect
-  product of a finite number of members of $\mathcal S$. 
+- Since $\mathcal S$ is closed under taking subalgebras,
+  we may assume $\mathbf{B}$ is a subdirect
+  product of a finite subcollection of $\mathcal S$. 
 
-- Choose $n$ minimal such that for some $\mathbf{A}_0$, $\mathbf{A}_1$, 
-  $\dots$, $\mathbf{A}_{n-1}$ in $\mathcal S$, there is a subdirect
-  product $\mathbf{B} \sdp \prod_{[n]} \mathbf{A}_i$
-  that has a prime quotient of type~2 whose minimal sets have
+- Choose $n$ minimal such that for some $\mathbf{A}_0$,
+  $\dots$, $\mathbf{A}_{n-1}$ in $\mathcal S$, there exists
+  $\mathbf{B} \leq_{sd} \prod_{[n]} \mathbf{A}_i$
+  with a prime quotient of type~2 whose minimal sets have
   non-empty tails.
   
-- Under the assumption that $n > 1$ we will prove that $n = 2$.
+- Under the assumption that $n > 1$ we prove that $n = 2$.
 
 ---
 
