@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="William DeMeo &lt;williamdemeo@gmail.com&gt;" />
+  <meta name="author" content="joint work with  Ralph Freese &amp; Matt Valeriote" />
+  <meta name="dcterms.date" content="2017-08-08" />
+  <title>A poly-time test for difference terms in idempotent varieties</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="term-conditions_files/reveal.js-3.3.0.1/css/reveal.css"/>
+
+
+
+<link rel="stylesheet" href="term-conditions_files/reveal.js-3.3.0.1/css/theme/night.css" id="theme">
+
+<style type="text/css">
+.reveal section img {
+  background: rgba(255, 255, 255, 0.85);
+}
+</style>
+
+  <!-- some tweaks to reveal css -->
+  <style type="text/css">
+    .reveal h1 { font-size: 2.0em; }
+    .reveal h2 { font-size: 1.5em;  }
+    .reveal h3 { font-size: 1.25em;	}
+    .reveal h4 { font-size: 1em;	}
+
+    .reveal .slides>section,
+    .reveal .slides>section>section {
+      padding: 0px 0px;
+    }
+
+
+
+    .reveal table {
+      border-width: 1px;
+      border-spacing: 2px;
+      border-style: dotted;
+      border-color: gray;
+      border-collapse: collapse;
+      font-size: 0.7em;
+    }
+
+    .reveal table th {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      font-weight: bold;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+    .reveal table td {
+      border-width: 1px;
+      padding-left: 10px;
+      padding-right: 25px;
+      border-style: dotted;
+      border-color: gray;
+    }
+
+
+  </style>
+
+    <style type="text/css">code{white-space: pre;}</style>
+
+
+<!-- Printing and PDF exports -->
+<script id="paper-css" type="application/dynamic-css">
+
+/* Default Print Stylesheet Template
+   by Rob Glazebrook of CSSnewbie.com
+   Last Updated: June 4, 2008
+
+   Feel free (nay, compelled) to edit, append, and
+   manipulate this file as you see fit. */
+
+
+@media print {
+
+	/* SECTION 1: Set default width, margin, float, and
+	   background. This prevents elements from extending
+	   beyond the edge of the printed page, and prevents
+	   unnecessary background images from printing */
+	html {
+		background: #fff;
+		width: auto;
+		height: auto;
+		overflow: visible;
+	}
+	body {
+		background: #fff;
+		font-size: 20pt;
+		width: auto;
+		height: auto;
+		border: 0;
+		margin: 0 5%;
+		padding: 0;
+		overflow: visible;
+		float: none !important;
+	}
+
+	/* SECTION 2: Remove any elements not needed in print.
+	   This would include navigation, ads, sidebars, etc. */
+	.nestedarrow,
+	.controls,
+	.fork-reveal,
+	.share-reveal,
+	.state-background,
+	.reveal .progress,
+	.reveal .backgrounds {
+		display: none !important;
+	}
+
+	/* SECTION 3: Set body font face, size, and color.
+	   Consider using a serif font for readability. */
+	body, p, td, li, div {
+		font-size: 20pt!important;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		color: #000;
+	}
+
+	/* SECTION 4: Set heading font face, sizes, and color.
+	   Differentiate your headings from your body text.
+	   Perhaps use a large sans-serif for distinction. */
+	h1,h2,h3,h4,h5,h6 {
+		color: #000!important;
+		height: auto;
+		line-height: normal;
+		font-family: Georgia, "Times New Roman", Times, serif !important;
+		text-shadow: 0 0 0 #000 !important;
+		text-align: left;
+		letter-spacing: normal;
+	}
+	/* Need to reduce the size of the fonts for printing */
+	h1 { font-size: 28pt !important;  }
+	h2 { font-size: 24pt !important; }
+	h3 { font-size: 22pt !important; }
+	h4 { font-size: 22pt !important; font-variant: small-caps; }
+	h5 { font-size: 21pt !important; }
+	h6 { font-size: 20pt !important; font-style: italic; }
+
+	/* SECTION 5: Make hyperlinks more usable.
+	   Ensure links are underlined, and consider appending
+	   the URL to the end of the link for usability. */
+	a:link,
+	a:visited {
+		color: #000 !important;
+		font-weight: bold;
+		text-decoration: underline;
+	}
+	/*
+	.reveal a:link:after,
+	.reveal a:visited:after {
+		content: " (" attr(href) ") ";
+		color: #222 !important;
+		font-size: 90%;
+	}
+	*/
+
+
+	/* SECTION 6: more reveal.js specific additions by @skypanther */
+	ul, ol, div, p {
+		visibility: visible;
+		position: static;
+		width: auto;
+		height: auto;
+		display: block;
+		overflow: visible;
+		margin: 0;
+		text-align: left !important;
+	}
+	.reveal pre,
+	.reveal table {
+		margin-left: 0;
+		margin-right: 0;
+	}
+	.reveal pre code {
+		padding: 20px;
+		border: 1px solid #ddd;
+	}
+	.reveal blockquote {
+		margin: 20px 0;
+	}
+	.reveal .slides {
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 0 !important;
+		zoom: 1 !important;
+
+		overflow: visible !important;
+		display: block !important;
+
+		text-align: left !important;
+		-webkit-perspective: none;
+		   -moz-perspective: none;
+		    -ms-perspective: none;
+		        perspective: none;
+
+		-webkit-perspective-origin: 50% 50%;
+		   -moz-perspective-origin: 50% 50%;
+		    -ms-perspective-origin: 50% 50%;
+		        perspective-origin: 50% 50%;
+	}
+	.reveal .slides section {
+		visibility: visible !important;
+		position: static !important;
+		width: auto !important;
+		height: auto !important;
+		display: block !important;
+		overflow: visible !important;
+
+		left: 0 !important;
+		top: 0 !important;
+		margin-left: 0 !important;
+		margin-top: 0 !important;
+		padding: 60px 20px !important;
+		z-index: auto !important;
+
+		opacity: 1 !important;
+
+		page-break-after: always !important;
+
+		-webkit-transform-style: flat !important;
+		   -moz-transform-style: flat !important;
+		    -ms-transform-style: flat !important;
+		        transform-style: flat !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+
+		-webkit-transition: none !important;
+		   -moz-transition: none !important;
+		    -ms-transition: none !important;
+		        transition: none !important;
+	}
+	.reveal .slides section.stack {
+		padding: 0 !important;
+	}
+	.reveal section:last-of-type {
+		page-break-after: avoid !important;
+	}
+	.reveal section .fragment {
+		opacity: 1 !important;
+		visibility: visible !important;
+
+		-webkit-transform: none !important;
+		   -moz-transform: none !important;
+		    -ms-transform: none !important;
+		        transform: none !important;
+	}
+	.reveal section img {
+		display: block;
+		margin: 15px 0px;
+		background: rgba(255,255,255,1);
+		border: 1px solid #666;
+		box-shadow: none;
+	}
+
+	.reveal section small {
+		font-size: 0.8em;
+	}
+
+}  
+</script>
+
+
+<script id="pdf-css" type="application/dynamic-css">
+    
+/**
+ * This stylesheet is used to print reveal.js
+ * presentations to PDF.
+ *
+ * https://github.com/hakimel/reveal.js#pdf-export
+ */
+
+* {
+	-webkit-print-color-adjust: exact;
+}
+
+body {
+	margin: 0 auto !important;
+	border: 0;
+	padding: 0;
+	float: none !important;
+	overflow: visible;
+}
+
+html {
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+}
+
+/* Remove any elements not needed in print. */
+.nestedarrow,
+.reveal .controls,
+.reveal .progress,
+.reveal .playback,
+.reveal.overview,
+.fork-reveal,
+.share-reveal,
+.state-background {
+	display: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	text-shadow: 0 0 0 #000 !important;
+}
+
+.reveal pre code {
+	overflow: hidden !important;
+	font-family: Courier, 'Courier New', monospace !important;
+}
+
+ul, ol, div, p {
+	visibility: visible;
+	position: static;
+	width: auto;
+	height: auto;
+	display: block;
+	overflow: visible;
+	margin: auto;
+}
+.reveal {
+	width: auto !important;
+	height: auto !important;
+	overflow: hidden !important;
+}
+.reveal .slides {
+	position: static;
+	width: 100%;
+	height: auto;
+
+	left: auto;
+	top: auto;
+	margin: 0 !important;
+	padding: 0 !important;
+
+	overflow: visible;
+	display: block;
+
+	-webkit-perspective: none;
+	   -moz-perspective: none;
+	    -ms-perspective: none;
+	        perspective: none;
+
+	-webkit-perspective-origin: 50% 50%; /* there isn't a none/auto value but 50-50 is the default */
+	   -moz-perspective-origin: 50% 50%;
+	    -ms-perspective-origin: 50% 50%;
+	        perspective-origin: 50% 50%;
+}
+
+.reveal .slides section {
+	page-break-after: always !important;
+
+	visibility: visible !important;
+	position: relative !important;
+	display: block !important;
+	position: relative !important;
+
+	margin: 0 !important;
+	padding: 0 !important;
+	box-sizing: border-box !important;
+	min-height: 1px;
+
+	opacity: 1 !important;
+
+	-webkit-transform-style: flat !important;
+	   -moz-transform-style: flat !important;
+	    -ms-transform-style: flat !important;
+	        transform-style: flat !important;
+
+	-webkit-transform: none !important;
+	   -moz-transform: none !important;
+	    -ms-transform: none !important;
+	        transform: none !important;
+}
+
+.reveal section.stack {
+	margin: 0 !important;
+	padding: 0 !important;
+	page-break-after: avoid !important;
+	height: auto !important;
+	min-height: auto !important;
+}
+
+.reveal img {
+	box-shadow: none;
+}
+
+.reveal .roll {
+	overflow: visible;
+	line-height: 1em;
+}
+
+/* Slide backgrounds are placed inside of their slide when exporting to PDF */
+.reveal section .slide-background {
+	display: block !important;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: -1;
+}
+
+/* All elements should be above the slide-background */
+.reveal section>* {
+	position: relative;
+	z-index: 1;
+}
+
+/* Display slide speaker notes when 'showNotes' is enabled */
+.reveal .speaker-notes-pdf {
+	display: block;
+	width: 100%;
+	max-height: none;
+	left: auto;
+	top: auto;
+	z-index: 100;
+}
+
+/* Display slide numbers when 'slideNumber' is enabled */
+.reveal .slide-number-pdf {
+	display: block;
+	position: absolute;
+	font-size: 14px;
+}
+
+</script>
+
+
+<script>
+var style = document.createElement( 'style' );
+style.type = 'text/css';
+var style_script_id = window.location.search.match( /print-pdf/gi ) ? 'pdf-css' : 'paper-css';
+var style_script = document.getElementById(style_script_id).text;
+style.innerHTML = style_script;
+document.getElementsByTagName('head')[0].appendChild(style);
+</script>
+
+    <link href="term-conditions_files/font-awesome-4.5.0/css/font-awesome.min.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section>
+    <h1 class="title">A poly-time test for difference terms in idempotent varieties</h1>
+    <h2 class="author">William DeMeo <a href="mailto:williamdemeo@gmail.com">&lt;williamdemeo@gmail.com&gt;</a></h2>
+    <h2 class="author">joint work with<br> Ralph Freese &amp; Matt Valeriote</h2>
+    <h3 class="date">08 August 2017</h3>
+</section>
+
+<section id="the-problem" class="slide level2">
+<h1>The Problem</h1>
+<ul>
+<li class="fragment"><p>Can we efficiently decide whether a finite algebra <span class="math inline">\(\mathbf{A}\)</span> generates a variety with a difference term?</p></li>
+<li class="fragment"><p>We give a positive answer in the idempotent case and describe an algorithm for constructing difference terms.</p></li>
+</ul>
+</section>
+<section id="definitions" class="slide level2">
+<h1>Definitions</h1>
+<div class="fragment" align="left">
+A <a style="color:#e7ad52"><em>difference term</em></a> for <span class="math inline">\(\mathcal V\)</span> is a term <span class="math inline">\(d\)</span> satisfying,
+<p>
+for all <span class="math inline">\(\mathbf A = \langle A, \dots \rangle \in \mathcal V\)</span> and all <span class="math inline">\(a, b \in A\)</span>,
+</p>
+<span class="math display">\[d(a,a,b) = b \quad \text{ and } \quad
+  d(a,b,b) \mathrel{[\theta, \theta]} a\]</span>
+</div>
+<br>
+<div class="fragment" align="left">
+where <span class="math inline">\(\theta\)</span> is any congruence containing <span class="math inline">\((a,b)\)</span> and <span class="math inline">\([\cdot, \cdot]\)</span> is the <a style="color:#e7ad52"><em>commutator</em></a>.
+</div>
+<aside class="notes">
+When the relations above hold we call <span class="math inline">\(d^{\mathbf{A}}\)</span> a <strong>difference term operation</strong> for <span class="math inline">\(\mathbf{A}\)</span>.
+</aside>
+</section>
+<section id="problem-statement" class="slide level2">
+<h1>Problem Statement</h1>
+<div class="fragment" align="left">
+<p>Is there a poly-time algorithm that takes a finite idempotent algebra <span class="math inline">\(\mathbf{A}\)</span> and decides whether <span class="math inline">\(\mathbb{V}(\mathbf{A})\)</span> has a difference term?</p>
+</div>
+<p>
+<div class="fragment" align="left">
+<p><strong>Theorem</strong> (Kearnes <em>J Algebra</em> 1995) <br> <a style="color:#e7ad52"><span class="math inline">\(\mathbb{V}(\mathbf{A})\)</span> has a diff term</a> <span class="math inline">\(\Leftrightarrow\)</span> <a style="color:#e7ad52"> <span class="math inline">\(\mathbb{V}(\mathbf{A})\)</span> omits 1’s and type 2 tails</a></p>
+</div>
+<p>
+<div class="fragment" align="left">
+<p>Omitting 1’s is poly-time decidable by Valeriote’s subtype theorem.</p>
+</div>
+<p>
+<div class="fragment" align="left">
+<p><strong>Reduced Problem</strong> <br> Is there a poly-time algorithm that takes a finite idempotent algebra <span class="math inline">\(\mathbf{A}\)</span> and decides whether <span class="math inline">\(\mathbb{V}(\mathbf{A})\)</span> has type 2 tails?</p>
+</div>
+</section>
+<section id="a-related-problem" class="slide level2">
+<h1>A Related Problem</h1>
+<ul>
+<li class="fragment"><p><strong>Theorem</strong> (Freese, Valeriote <em>IJAC</em> 2009)<br> There is a poly-time algorithm that takes a finite idempotent algebra <span class="math inline">\(\mathbf{A}\)</span> and decides whether <span class="math inline">\(\mathbb{V}(\mathbf{A})\)</span> is <a style="color:#e7ad52"><em>congruence-modular</em></a>.</p></li>
+<li class="fragment"><strong>Proof Idea</strong> <small>
+<ul>
+<li>
+Congruence-modularity is characterized by omitting 1’s, 5’s, and tails.
+</li>
+<li>
+Omitting 1’s and 5’s is poly-time decidable by the subtype theorem.
+</li>
+<li>
+If there is a tail in <span class="math inline">\(\mathbb{V}(\mathbf{A})\)</span>, then there is a tail “near the bottom”.
+</li>
+</ul>
+<p></small></p></li>
+</ul>
+</section>
+<section id="what-is-near-the-bottom" class="slide level2">
+<h1>What is “near the bottom”?</h1>
+<ul>
+<li class="fragment"><strong>Theorem.</strong> Let <span class="math inline">\(\mathbf{A}\)</span> be a finite idempotent algebra and <span class="math inline">\(T\)</span> an order ideal in the lattice of types. Then <span class="math inline">\(\mathbb{V}(\mathbf{A})\)</span> omits <span class="math inline">\(T\)</span> iff <span class="math inline">\(\mathsf{S}(\mathbf{A})\)</span> does.
+<p>
+For example, <span class="math inline">\(\mathbb{V}(\mathbf{A})\)</span> omits <span class="math inline">\(\{1, 5\}\)</span> iff <span class="math inline">\(\mathsf{S}(\mathbf{A})\)</span> does.
+</p></li>
+<li class="fragment">Freese and Valeriote prove
+<p>
+If <span class="math inline">\(\mathbb{V}(\mathbf{A})\)</span> omits <span class="math inline">\(\{1, 5\}\)</span>, then nontrivial tails occur in <span class="math inline">\(\mathbb{V}(\mathbf{A})\)</span> only if they occur in 3-generated subalgebras of <span class="math inline">\(\mathbf{A}^2\)</span>.
+</p></li>
+</ul>
+</section>
+<section id="main-theorem" class="slide level2">
+<h1>Main Theorem</h1>
+<ul>
+<li class="fragment"><p>Let <span class="math inline">\(\mathcal S\)</span> be a finite set of finite idempotent algebras closed under taking subalgebras.</p></li>
+<li class="fragment"><p>Suppose <span class="math inline">\(\mathbb{V}(\mathcal S)\)</span> omits type 1 and contains a finite algebra <span class="math inline">\(\mathbf{B}\)</span> with a type 2 prime quotient <span class="math inline">\(\alpha \prec \beta\)</span> such that the <span class="math inline">\(\langle \alpha, \beta \rangle\)</span>-minimal sets have non-empty tails.</p></li>
+<li class="fragment"><p>Then there exists a 3-generated subalgebra of the product of two members of <span class="math inline">\(\mathcal S\)</span> with this property.</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li class="fragment"><p>WLOG <span class="math inline">\(\mathbf{B}\)</span> is a subdirect product of a finite subcollection of <span class="math inline">\(\mathcal S\)</span>.</p></li>
+<li class="fragment"><p>Choose <span class="math inline">\(n\)</span> minimal such that for some <span class="math inline">\(\mathbf{A}_0\)</span>, <span class="math inline">\(\dots\)</span>, <span class="math inline">\(\mathbf{A}_{n-1}\)</span> in <span class="math inline">\(\mathcal S\)</span>, there exists <span class="math inline">\(\mathbf{B} \leq_{sd} \prod_{[n]} \mathbf{A}_i\)</span> with a prime quotient of type 2 whose minimal sets have tails.</p></li>
+<li class="fragment"><p>Assuming <span class="math inline">\(n &gt; 1\)</span>, we prove that <span class="math inline">\(n = 2\)</span>.</p></li>
+</ul>
+</section>
+<section class="slide level2">
+
+<ul>
+<li class="fragment"><p>For this <span class="math inline">\(n\)</span>, select the <span class="math inline">\(\mathbf{A}_i\)</span> and <span class="math inline">\(\mathbf{B}\)</span> so that <span class="math inline">\(|B|\)</span> is as small as possible.</p></li>
+<li class="fragment"><p>Let <span class="math inline">\(\alpha \prec \beta\)</span> be a prime quotient of <span class="math inline">\(\mathbf{B}\)</span> of type~2 such that its minimal sets have non-empty tails, and choose <span class="math inline">\(\beta\)</span> minimal with this property.</p></li>
+<li class="fragment"><p>By HM, this implies <span class="math inline">\(\beta\)</span> is join irreducible and <span class="math inline">\(\alpha\)</span> is its unique subcover. Let <span class="math inline">\(U\)</span> be an <span class="math inline">\((\alpha, \beta)\)</span>-minimal set.</p></li>
+</ul>
+</section>
+<section id="lemma-3.1" class="slide level2">
+<h1>Lemma 3.1</h1>
+<p>If <span class="math inline">\(0\)</span>, <span class="math inline">\(1 \in U\)</span> such that <span class="math inline">\((0,1) \in \beta - \alpha\)</span> and <span class="math inline">\(t\)</span> be a member of the tail of <span class="math inline">\(U\)</span>. Then <span class="math inline">\(\beta\)</span> is the congruence of <span class="math inline">\(\mathbf{B}\)</span> generated by the pair <span class="math inline">\((0,1)\)</span> and <span class="math inline">\(\mathbf{B}\)</span> is generated by <span class="math inline">\(\{0, 1, t\}\)</span>.</p>
+</section>
+<section class="slide level2">
+
+<p>For <span class="math inline">\(i \leq n\)</span>, let <span class="math inline">\(\rho_i\)</span> denote the kernel of the projection of <span class="math inline">\(\mathbf{B}\)</span> onto <span class="math inline">\(\mathbf{A}_i\)</span>, so <span class="math inline">\(\mathbf{B} \cong \mathbf{A}_i/\rho_i\)</span>. For a subset <span class="math inline">\(\sigma \subseteq [n]\)</span>, define</p>
+<p><span class="math inline">\(\rho_\sigma := \bigwedge_{j\in \sigma} \rho_j.\)</span></p>
+<p>Consequently,</p>
+<p><span class="math inline">\(\rho_{[n]} = \bigwedge_{j\in [n]}\rho_j = 0_{B}\)</span></p>
+<p>By minimality of <span class="math inline">\(n\)</span> we know that the intersection of any proper subset of the <span class="math inline">\(\rho_i\)</span>, <span class="math inline">\(1 \leq i \leq n\)</span> is strictly above <span class="math inline">\(0_B\)</span>. Thus, <span class="math inline">\(0_B &lt; \rho_\sigma &lt; 1_B\)</span> for all <span class="math inline">\(\emptyset \subset \sigma\subset [n]\)</span> (by <span class="math inline">\(\subset\)</span> we mean  subset).</p>
+</section>
+<section id="lemma-3.2" class="slide level2">
+<h1>Lemma 3.2</h1>
+<p>For every proper nonempty subset <span class="math inline">\(\sigma \subset [n]\)</span>, either <span class="math inline">\(\beta \leq \rho_\sigma\)</span> or <span class="math inline">\(\alpha \vee \rho_\sigma = 1_B\)</span>.</p>
+</section>
+<section id="near-permutability-lemma" class="slide level2">
+<h1>Near Permutability Lemma</h1>
+For all <span class="math inline">\(\sigma \subset [n]\)</span>, all <span class="math inline">\(v\in B\)</span>, and all <span class="math inline">\(c\in body(U)\)</span>, we have
+<span class="math display">\[\begin{equation*}(v,c) \in \beta \circ \rho_\sigma \cap \rho_\sigma \circ \beta.\end{equation*}\]</span>
+</section>
+<section id="lemma-3.3" class="slide level2">
+<h1>Lemma 3.3</h1>
+<ol type="1">
+<li class="fragment"><p>There exists <span class="math inline">\(0 \leq i &lt; n\)</span> such that <span class="math inline">\(\alpha \vee \rho_i = 1_B\)</span></p></li>
+<li class="fragment"><p>There exists <span class="math inline">\(i\)</span> such that <span class="math inline">\(\alpha \vee \rho_i &lt; 1_B\)</span>.</p></li>
+</ol>
+</section>
+<section id="theorem-3.4" class="slide level2">
+<h1>Theorem 3.4</h1>
+<p>Let <span class="math inline">\(\mathcal V\)</span> be the variety generated by some finite set <span class="math inline">\(\mathcal S\)</span> of finite, idempotent algebras that is closed under taking subalgebras. If <span class="math inline">\(\mathcal V\)</span> omits type 1 and some finite member of <span class="math inline">\(\mathcal V\)</span> has a prime quotient of type 2 whose minimal sets have non-empty tails, then there is some 3-generated algebra <span class="math inline">\(\mathbf{B}\)</span> with this property that belongs to <span class="math inline">\(\mathcal S\)</span> or is a subdirect product of two algebras from <span class="math inline">\(\mathcal S\)</span>.</p>
+</section>
+    </div>
+  </div>
+
+  <script src="term-conditions_files/reveal.js-3.3.0.1/lib/js/head.min.js"></script>
+  <script src="term-conditions_files/reveal.js-3.3.0.1/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Display a presentation progress bar
+        progress: true,
+        // Display the page number of the current slide
+        slideNumber: true,
+        // Push each slide change to the browser history
+        history: true,
+        // Vertical centering of slides
+        center: false,
+        // Transition style
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'default', // none/fade/slide/convex/concave/zoom
+
+
+
+        chalkboard: {
+        },
+
+        keyboard: {
+          67: function() { RevealChalkboard.toggleNotesCanvas() },    // toggle notes canvas when 'c' is pressed
+          66: function() { RevealChalkboard.toggleChalkboard() }, // toggle chalkboard when 'b' is pressed
+          46: function() { RevealChalkboard.clear() },    // clear chalkboard when 'DEL' is pressed
+           8: function() { RevealChalkboard.reset() },    // reset chalkboard data on current slide when 'BACKSPACE' is pressed
+          68: function() { RevealChalkboard.download() }, // downlad recorded chalkboard drawing when 'd' is pressed
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'term-conditions_files/reveal.js-3.3.0.1/plugin/notes/notes.js', async: true },
+          { src: 'term-conditions_files/reveal.js-3.3.0.1/plugin/zoom-js/zoom.js', async: true },
+          { src: 'term-conditions_files/reveal.js-3.3.0.1/plugin/chalkboard/chalkboard.js', async: true },
+        ]
+      });
+    </script>
+  <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+      document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+
+<script>
+  (function() {
+    if (window.jQuery) {
+      Reveal.addEventListener( 'slidechanged', function(event) {  
+        window.jQuery(event.previousSlide).trigger('hidden');
+        window.jQuery(event.currentSlide).trigger('shown');
+      });
+    }
+  })();
+</script>
+
+
+  </body>
+</html>
