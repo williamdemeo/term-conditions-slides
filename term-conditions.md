@@ -104,17 +104,19 @@ a **difference term operation** for $\mathbf{A}$.
 
 ## Main Theorem
 
-- Let $\mathcal S$ be a finite set of finite idempotent algebras 
-  closed under taking subalgebras.
-  
-- Suppose $\mathbb{V}(\mathcal S)$ omits type 1 and contains a finite
+- Suppose $\mathbb{V}(\mathbf A)$ omits type 1 and contains a finite
   algebra $\mathbf{B}$ with a type 2 prime quotient $\alpha \prec \beta$
   such that the $\langle \alpha, \beta \rangle$-minimal sets have non-empty tails.
   
-- Then there exists a 3-generated subalgebra of the
-  product of two members of $\mathcal S$ with this property.
+- Then there exists a 3-generated subalgebra of $\mathbf A \times \mathbf A$
+  with this property.
+  
+- **Conclusion:** to check for type 2 tails in $\mathbb{V}(\mathbf A)$, it suffices 
+  to look for them in 3-generated subalgebras of $\mathbf A \times \mathbf A$.
 
 ---
+
+## Proof Strategy
 
 - WLOG $\mathbf{B}$ is a subdirect
   product of a finite subcollection of $\mathcal S$. 

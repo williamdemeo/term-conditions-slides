@@ -541,13 +541,13 @@ If <span class="math inline">\(\mathbb{V}(\mathbf{A})\)</span> omits <span class
 <section id="main-theorem" class="slide level2">
 <h1>Main Theorem</h1>
 <ul>
-<li class="fragment"><p>Let <span class="math inline">\(\mathcal S\)</span> be a finite set of finite idempotent algebras closed under taking subalgebras.</p></li>
-<li class="fragment"><p>Suppose <span class="math inline">\(\mathbb{V}(\mathcal S)\)</span> omits type 1 and contains a finite algebra <span class="math inline">\(\mathbf{B}\)</span> with a type 2 prime quotient <span class="math inline">\(\alpha \prec \beta\)</span> such that the <span class="math inline">\(\langle \alpha, \beta \rangle\)</span>-minimal sets have non-empty tails.</p></li>
-<li class="fragment"><p>Then there exists a 3-generated subalgebra of the product of two members of <span class="math inline">\(\mathcal S\)</span> with this property.</p></li>
+<li class="fragment"><p>Suppose <span class="math inline">\(\mathbb{V}(\mathbf A)\)</span> omits type 1 and contains a finite algebra <span class="math inline">\(\mathbf{B}\)</span> with a type 2 prime quotient <span class="math inline">\(\alpha \prec \beta\)</span> such that the <span class="math inline">\(\langle \alpha, \beta \rangle\)</span>-minimal sets have non-empty tails.</p></li>
+<li class="fragment"><p>Then there exists a 3-generated subalgebra of <span class="math inline">\(\mathbf A \times \mathbf A\)</span> with this property.</p></li>
+<li class="fragment"><p><strong>Conclusion:</strong> to check for type 2 tails in <span class="math inline">\(\mathbb{V}(\mathbf A)\)</span>, it suffices to look for them in 3-generated subalgebras of <span class="math inline">\(\mathbf A \times \mathbf A\)</span>.</p></li>
 </ul>
 </section>
-<section class="slide level2">
-
+<section id="proof-strategy" class="slide level2">
+<h1>Proof Strategy</h1>
 <ul>
 <li class="fragment"><p>WLOG <span class="math inline">\(\mathbf{B}\)</span> is a subdirect product of a finite subcollection of <span class="math inline">\(\mathcal S\)</span>.</p></li>
 <li class="fragment"><p>Choose <span class="math inline">\(n\)</span> minimal such that for some <span class="math inline">\(\mathbf{A}_0\)</span>, <span class="math inline">\(\dots\)</span>, <span class="math inline">\(\mathbf{A}_{n-1}\)</span> in <span class="math inline">\(\mathcal S\)</span>, there exists <span class="math inline">\(\mathbf{B} \leq_{sd} \prod_{[n]} \mathbf{A}_i\)</span> with a prime quotient of type 2 whose minimal sets have tails.</p></li>
