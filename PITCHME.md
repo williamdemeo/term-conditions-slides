@@ -101,43 +101,52 @@ to check for type-2 tails in $\mathbb{V}(\mathbf A)$ it suffices to look in 3-ge
 $[n] = \{ 0, 1, \dots, n-1 \}, \qquad
 \rho_i = \operatorname{ker} (\mathbf B \twoheadrightarrow \mathbf A_i), \qquad \rho_s = \bigwedge_s \rho_j$
 
+<p class="fragment" align="left">
 Let $S$ be a finite set of finite idempotent algebras that is closed 
 under taking subalgebras. 
+</p>
 
+<p class="fragment" align="left">
 Assume $\operatorname{typ}\mathbb{V}(S)$ omits 1.
+</p>
 
+<p class="fragment" align="left">
 Suppose there is a finite algebra in $\mathbb{V}(S)$ having a type-2
 minimal set with a nonempty tail.
-
-Then at least one such algebra occurs as a 
+Then (from tct), at least one such algebra occurs as a 
 subalgebra of a product of elements in $S$.
-
-So we suppose that some finite algebra
-$\alg{B}$ in $\sV$ has a type-2 prime quotient minimal sets having
-nonempty tails. 
-
-We show that there is a 3-generated subalgebra of the product of two members of $\sS$ with this property.
+</p>
 
 ---
 
-Since $\sS$ is closed under the taking of subalgebras,
-we may assume that the algebra $\alg{B}$ from the previous paragraph is a subdirect
-product of a finite number of members of $\sS$. Choose $n$ minimal such that for
-some $\alg{A}_0$, $\alg{A}_1$, $\dots$, $\alg{A}_{n-1}$ in $\sS$, there is a subdirect
-product $\alg{B} \sdp \prod_{\nn} \alg{A}_i$
-that has a prime quotient of type~\atyp\ whose minimal sets have
-non-empty tails.
+<p class="fragment" align="left">
+Suppose that some finite algebra
+$\mathbf B$ in $\mathbb{V}(S)$ has a type-2 prime quotient minimal sets having nonempty tails. 
+
+We show that there is a 3-generated subalgebra of the product of two members of $\sS$ with this property.
+</p>
+
+---
+
+Assume $\mathbf B$ is a subdirect
+product of a finite number of members of $S$. 
+
+Choose $n$ minimal such that for
+some $\mathbf{A}_0$, $\mathbf{A}_1$, $\dots$, $\mathbf{A}_{n-1}$ in $S$, there is a subdirect product $\mathbf{B} \leq_s \prod_{[n]} \mathbf{A}_i$
+that has type-2 tails.
+
 Under the assumption that $n > 1$ we will prove that $n = 2$.
 
 ---
 
-For this $n$, select the $\alg{A}_i$ and $\alg{B}$ so that $|B|$ is as small as possible.
-Let $\alpha \prec \beta$ be a prime quotient of $\alg{B}$ 
-of type~\atyp\ whose minimal sets have
-non-empty tails, and choose $\beta$ minimal with respect to this property.
-By~\cite[Lemma 6.2]{HM:1988}, this implies $\beta$ is join 
+For this $n$, select the $\mathbf{A}_i$ and $\mathbf{B}$ so that $|B|$ is as small as possible.
+
+Let $\alpha \prec \beta$ be a type-2 prime quotient of $\mathbf B$ 
+whose minimal sets have nonempty tails, and choose $\beta$ minimal with respect to this property.
+
+By Lemma 6.2 of HM, this implies $\beta$ is join 
 irreducible and $\alpha$ is its unique subcover.
-Let $U$ be an $\<\alpha, \beta\>$-minimal set. 
+Let $U$ be an $\langle \alpha, \beta \rangle$-minimal set. 
 
 ---
 
