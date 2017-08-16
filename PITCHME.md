@@ -16,7 +16,7 @@ joint work with Ralph Freese & Matt Valeriote
 
 ---
 
-## Definitions
+## Definition
 
 A <a style="color:#e7ad52"><i>difference term</i></a> for $\mathcal{V}$ is a term $d$ satisfying, $\forall \; \mathbf A \in \mathcal V$ and $\forall a, b \in A$, 
 
@@ -34,7 +34,7 @@ idempotent algebra $\mathbf{A}$ and decides
 whether $\mathbb{V}(\mathbf{A})$ has a difference term?
 
 <div class="fragment" align="left"><a style="color:#e7ad52">**Theorem**</a> (Kearnes *J Algebra* 1995)   
-$\mathbb{V}(\mathbf{A})$ has a diff term
+$\mathbb{V}(\mathbf{A})$ has a difference term
 $\Leftrightarrow$  $\mathbb{V}(\mathbf{A})$ omits 1's and type-2 tails
 </div>
 
@@ -54,25 +54,28 @@ $\mathbb{V}(\mathbf{A})$ has nonempty type-2 tails?
 ## Strategy
 
 <p class="fragment" align="left">
-<a style="color:#e7ad52">*Kearnes*</a>   
+<a style="color:#e7ad52">*Kearnes:*</a>
 Having a diff term is characterized by omitting 1's and type-2 tails.
 </p>
 
 <p class="fragment" align="left">
-<a style="color:#e7ad52">*Valeriote*</a>   
+<a style="color:#e7ad52">*Valeriote:*</a>
 Omitting 1's is poly-time decidable by the subtype theorem.
 </p>
 
 <p class="fragment" align="left">
-<a style="color:#e7ad52">*To show:*</a>   
+<a style="color:#e7ad52">*To show:*</a> 
 Nonempty type-2 tails, when they occur in $\mathbb{V}(\mathbf{A})$, 
-are easy to spot.
+are easy to find.
+</p>
 
 ---
 
-## Moral
+---?image=http://www.propinsanity.com/wp-content/uploads/2014/09/image.jpg
 
-*Beatiful babies with tails are easy to spot.*
+<p class="fragment" align="left">
+<a style="color:#e7ad52">*Goal:*</a>
+Show that beautiful babies with tails are easy to find.
 
 ---
 
