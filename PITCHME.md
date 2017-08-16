@@ -147,7 +147,7 @@ irreducible and $\alpha$ is its unique subcover (HM Lemma 6.2).
 
 ---
 
-## Fourfold Path to a Proof
+### Fourfold Path to a Proof
 
 <a style="color:#e7ad52">**Lemma 1**</a>  
 Suppose $U$ is an $\langle \alpha, \beta \rangle$-minimal set and $0, 1 \in U$ and $(0,1) \in \beta - \alpha$ and $t \in Tail(U)$
@@ -207,27 +207,26 @@ If $n > 2$ then Lemma 2 applies to $\rho = \rho_i
 </p>
 
 <p class="fragment" align="left">
-This is a contradiction:    
 (1) impossible, since $\beta \not\le \rho_j$   
 (2) impossible, since both $\alpha$ and $\rho$ are below $\rho_i$.    
 
-So, the minimality of $n$ forces $n\leq 2$ and the result follows.
+So, $n\leq 2$ and the theorem is proved.
 </p>
 
 ---
 
-## Questions and Future Work
+## Future Work
 
-### Algorithms
-
-<p class="fragment" align="left">
-<a style="color:#e7ad52">Conjecture:</a> This new way to test for existence of a difference terms will soon appear available the *Idempotent* menu of UACalc.
-</p>
-
-### Question
+### Questions
 
 <p class="fragment" align="left">
 Is there a poly-time algorithm for producing a difference term when such a term is known to exist?
+</p>
+
+### Conjectures
+
+<p class="fragment" align="left">
+This new test for existence of a difference term will soon appear in the *Idempotent* menu of UACalc.
 </p>
 
 ---
