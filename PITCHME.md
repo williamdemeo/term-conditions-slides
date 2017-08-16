@@ -100,16 +100,13 @@ to check for type-2 tails in $\mathbb{V}(\mathbf A)$, it suffices to look in 3-g
 
 ## Notation
 
-$nn = \{0, 1, \dots, n-1\}$
+$[n] = \left\{0, 1, \dots, n-1\right\}$
 
-For $i \leq n$, let 
+For $i \leq n$, define 
 $\rho_i = \operatorname{ker} (\mathbf B \twoheadrightarrow \mathbf A_i)$.
 
-For a subset $s \subseteq nn$, define
+For $s \subseteq [n]$, define $\rho_s = \bigwedge_s \rho_j$.
 
-$$\rho_s = \bigwedge_s \rho_j$$
-
-so, $\rho_{nn} = \bigwedge_{nn} \rho_j = 0_{B}$.
 
 ---
 
