@@ -105,9 +105,9 @@ $\rho_i = \operatorname{ker} (\mathbf B \twoheadrightarrow \mathbf A_i)$.
 
 For a subset $s \subseteq \underline{n}$, define
 
-$$\rho_s := \bigwedge_{j\in s} \rho_j,$$
+$$\rho_s = \bigwedge_s \rho_j$$
 
-so, $\rho_{\underline{n}} = \bigwedge_{j\in \underline{n}}\rho_j = 0_{B}$.
+so, $\rho_{\underline{n}} = \bigwedge_{\underline{n}} \rho_j = 0_{B}$.
 
 ---
 
@@ -126,17 +126,16 @@ For every $\emptyset \subset s \subset \underline{n}$,
 ---
 
 <p class="fragment" align="left">
-<a style="color:#e7ad52">**Lemma 3**</a>  
-$\forall \; \emptyset \subset s \subset \underline{n}$,
-$\forall \; v\in B$,
-$\forall \; b\in Body(U)$, we have
-$$(v,b) \in \beta \circ \rho_s \cap \rho_s \circ \beta$$.
+<a style="color:#e7ad52">**Lemma 3**</a>
+$\forall \; \emptyset \subset s \subset \underline{n}, \quad
+\forall \; v\in B, \quad \forall \; b\in Body(U)$, we have
+$$(v,b) \in \beta \circ \rho_s \cap \rho_s \circ \beta$$
 </p>
 
 <p class="fragment" align="left">
 <a style="color:#e7ad52">**Lemma 4**</a>  
-  1. There exists $i$ such that $\alpha \vee \rho_i = 1_B$
-  2. There exists $i$ such that $\alpha \vee \rho_i < 1_B$.
+1. There exists $i$ such that $\alpha \vee \rho_i = 1_B$  
+2. There exists $i$ such that $\alpha \vee \rho_i < 1_B$
 </p>
 
 
