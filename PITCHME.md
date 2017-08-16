@@ -92,8 +92,8 @@ Then there exists a 3-generated subalgebra of $\mathbf A \times \mathbf A$
 with this property. </p>
   
 <p class="fragment" align="left">
-<a style="color:#e7ad52">**Conclusion:**</a> 
-to check for type-2 tails in $\mathbb{V}(\mathbf A)$, it suffices to look in 3-generated subalgebras of $\mathbf A \times \mathbf A$.
+<a style="color:#e7ad52">**Conclusion**</a>  
+To check for type-2 tails in $\mathbb{V}(\mathbf A)$ it suffices to look in 3-generated subalgebras of $\mathbf A \times \mathbf A$.
 </p>
 
 ---
@@ -126,16 +126,15 @@ For every $\emptyset \subset s \subset [n]$,
 </p>
 
 <p class="fragment" align="left">
-<a style="color:#e7ad52">**Lemma 3**</a>
+<a style="color:#e7ad52">**Lemma 3.**</a>  
 $\forall \; \emptyset \subset s \subset [n], \quad
 \forall \; v\in B, \quad \forall \; b\in Body(U)$,   
 we have $(v,b) \in \beta \circ \rho_s \cap \rho_s \circ \beta$.
 </p>
 
 <p class="fragment" align="left">
-<a style="color:#e7ad52">**Lemma 4**</a>  
-There exist $i$ and $j$ such that $\alpha \vee \rho_i = 1_B$  
-and $\alpha \vee \rho_j < 1_B$.
+<a style="color:#e7ad52">**Lemma 4.**</a>  
+There exist $i$ and $j$ such that $\alpha \vee \rho_i = 1_B$ and $\alpha \vee \rho_j < 1_B$.
 </p>
 
 
