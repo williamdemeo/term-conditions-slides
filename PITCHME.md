@@ -125,19 +125,17 @@ For every $\emptyset \subset s \subset [n]$,
   either $\beta \leq \rho_s$ or $\alpha \vee \rho_s = 1_B$.
 </p>
 
----
-
 <p class="fragment" align="left">
 <a style="color:#e7ad52">**Lemma 3**</a>
 $\forall \; \emptyset \subset s \subset [n], \quad
-\forall \; v\in B, \quad \forall \; b\in Body(U)$, we have
-$$(v,b) \in \beta \circ \rho_s \cap \rho_s \circ \beta$$
+\forall \; v\in B, \quad \forall \; b\in Body(U)$,   
+we have $(v,b) \in \beta \circ \rho_s \cap \rho_s \circ \beta$.
 </p>
 
 <p class="fragment" align="left">
 <a style="color:#e7ad52">**Lemma 4**</a>  
-1. There exists $i$ such that $\alpha \vee \rho_i = 1_B$  
-2. There exists $i$ such that $\alpha \vee \rho_i < 1_B$
+There exist $i$ and $j$ such that $\alpha \vee \rho_i = 1_B$  
+and $\alpha \vee \rho_j < 1_B$.
 </p>
 
 
