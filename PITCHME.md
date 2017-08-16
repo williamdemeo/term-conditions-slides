@@ -112,7 +112,7 @@ For $s \subseteq [n]$, define $\rho_s = \bigwedge_s \rho_j$.
 
 <p class="fragment" align="left">
 <a style="color:#e7ad52">**Lemma 1.**</a>  
-Suppose $U$ is an $\<\alpha, \beta\>$-minimal set, and $0, 1 \in U$, 
+Suppose $U$ is an $\langle \alpha, \beta \rangle$-minimal set, and $0, 1 \in U$, 
 and $(0,1) \in \beta - \alpha$, and
 $t \in Tail(U)$.
 
