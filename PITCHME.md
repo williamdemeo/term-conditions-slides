@@ -122,9 +122,9 @@ product of a finite number of members of $S$.
 
 <p class="fragment" align="left">
 Choose $n$ minimal such that for
-some $\mathbf{A}_0$, $\mathbf{A}_1$, $\dots$, $\mathbf{A}_{n-1}$ in $S$,
+some $\mathbf{A}_1$, $\mathbf{A}_2$, $\dots$, $\mathbf{A}_n$ in $S$,
 
-$$\mathbf{B} \leq_s \prod_{[n]} \mathbf{A}_i$$
+$$\mathbf{B} \leq_s \prod \mathbf{A}_i$$
 </p>
 
 <p class="fragment" align="left">
