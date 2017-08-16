@@ -53,6 +53,8 @@ output:
 a **difference term operation** for $\mathbf{A}$.
 </aside>
 
+<aside class="notes"> We make colors <span class="fragment highlight-red">like this</span></aside>
+
 ---
 
 ## Problem Statement
