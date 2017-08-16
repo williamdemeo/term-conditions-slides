@@ -133,6 +133,8 @@ Under the assumption that $n > 1$ we will prove $n = 2$.
 
 ---
 
+### Minimality Assumptions
+
 For this $n$, select the $\mathbf{A}_i$ and $\mathbf{B}$ so that $|B|$ is as small as possible.
 
 Let $\alpha \prec \beta$ be a type-2 prime quotient of $\mathbf B$ 
@@ -144,6 +146,8 @@ irreducible and $\alpha$ is its unique subcover (HM Lemma 6.2).
 </p>
 
 ---
+
+## Fourfold Path to a Proof
 
 <a style="color:#e7ad52">**Lemma 1**</a>  
 Suppose $U$ is an $\langle \alpha, \beta \rangle$-minimal set and $0, 1 \in U$ and $(0,1) \in \beta - \alpha$ and $t \in Tail(U)$
