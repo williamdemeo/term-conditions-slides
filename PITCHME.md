@@ -107,35 +107,29 @@ under taking subalgebras.
 </p>
 
 <p class="fragment" align="left">
-Assume $\operatorname{typ}\mathbb{V}(S)$ omits 1.
+Assume $\mathbb{V}(S)$ omits type 1.
 </p>
 
 <p class="fragment" align="left">
-Suppose there is a finite algebra in $\mathbb{V}(S)$ having a type-2
-minimal set with a nonempty tail.
-Then (from tct), at least one such algebra occurs as a 
-subalgebra of a product of elements in $S$.
+Suppose there is a finite $\mathbf{B} \in \mathbb{V}(S)$ with type-2
+tails.
 </p>
 
 ---
 
-<p class="fragment" align="left">
-Suppose that some finite algebra
-$\mathbf B$ in $\mathbb{V}(S)$ has a type-2 prime quotient minimal sets having nonempty tails. 
-
-We show that there is a 3-generated subalgebra of the product of two members of $\sS$ with this property.
-</p>
-
----
-
-Assume $\mathbf B$ is a subdirect
+WLOG Assume $\mathbf B$ is a subdirect
 product of a finite number of members of $S$. 
 
+<p class="fragment" align="left">
 Choose $n$ minimal such that for
-some $\mathbf{A}_0$, $\mathbf{A}_1$, $\dots$, $\mathbf{A}_{n-1}$ in $S$, there is a subdirect product $\mathbf{B} \leq_s \prod_{[n]} \mathbf{A}_i$
-that has type-2 tails.
+some $\mathbf{A}_0$, $\mathbf{A}_1$, $\dots$, $\mathbf{A}_{n-1}$ in $S$,
 
+$$\mathbf{B} \leq_s \prod_{[n]} \mathbf{A}_i$$
+</p>
+
+<p class="fragment" align="left">
 Under the assumption that $n > 1$ we will prove that $n = 2$.
+</p>
 
 ---
 
