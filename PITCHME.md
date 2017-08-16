@@ -101,12 +101,12 @@ to check for type-2 tails in $\mathbb{V}(\mathbf A)$, it suffices to look in 3-g
 ## Notation
 
 For $i \leq n$, let 
-$\rho_i = \operatorname{ker} (\mathbf B \twoheadrightarrow \mathbf A_i)$, so $\mathbf B \cong \mathbf{A}_i/\rho_i$.
+$\rho_i = \operatorname{ker} (\mathbf B \twoheadrightarrow \mathbf A_i)$.
 
 For a subset $s \subseteq \underline{n}$, define
-\[
-\rho_s := \bigwedge_{j\in s} \rho_j,
-\]
+
+$$\rho_s := \bigwedge_{j\in s} \rho_j,$$
+
 so, $\rho_{\underline{n}} = \bigwedge_{j\in \underline{n}}\rho_j = 0_{B}$.
 
 ---
