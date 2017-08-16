@@ -127,9 +127,9 @@ For every $\emptyset \subset s \subset \underline{n}$,
 
 <p class="fragment" align="left">
 <a style="color:#e7ad52">**Lemma 3**</a>  
-$\forall \; \emptyset \subset s \subset \underline{n}$,   
-$\forall \; v\in B$,   
-$\forall \; b\in Body(U)$,
+$\forall \; \emptyset \subset s \subset \underline{n}$,
+$\forall \; v\in B$,
+$\forall \; b\in Body(U)$, we have
 $$(v,b) \in \beta \circ \rho_s \cap \rho_s \circ \beta$$.
 </p>
 
